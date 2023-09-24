@@ -11,7 +11,7 @@
             }
     
             h1 {
-                background-color: #007bff;
+                background-color: #ff1e00;
                 color: white;
                 padding: 20px;
                 text-align: left;
@@ -23,7 +23,7 @@
             }
     
             li {
-                background-color: white;
+                background-color: rgb(255, 255, 255);
                 margin: 5px;
                 padding: 10px;
                 border-radius: 5px;
@@ -33,7 +33,43 @@
     </head> 
     <body> 
         <h1>RACHACUCA</h1> 
+       
+        <div id="dateTime"></div>
+<script>
+    function updateDateTime() {
+        var dateTimeElement = document.getElementById("dateTime");
+        var currentDate = new Date();
+        var options = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            timeZoneName: 'short'
+        };
         
+        var formattedDate = currentDate.toLocaleDateString('pt-BR', options);
+        // Capitalize the first letter of the day of the week
+        formattedDate = formattedDate.replace(/^\w/, (c) => c.toUpperCase());
+        
+        // Use <strong> element to make the text bold
+        dateTimeElement.innerHTML = '<strong>' + formattedDate + '</strong>';
+    }
+
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+</script>
+
+<style>
+    strong {
+        font-weight: bold;
+    }
+</style>
+
+
+              
      <?php include('rachacuca.php') ?>
         
     </body> 
