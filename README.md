@@ -1,10 +1,10 @@
 # Rachacuca
 Mostra a lista de estações meteorológicas de sp e suas respectivas temperaturas atuais de forma decrescente, da mais alta para a mais baixa.<br>
 Assim é possível saber onde está com mais calor em tempo real.<br>
-As informações são retiradas diretamente do site [cge](https://www.cgesp.org/v3/)https://www.cgesp.org/v3/<br>
+As informações são retiradas diretamente do site (https://www.cgesp.org/v3/)https://www.cgesp.org/v3/<br>
 
 Para rodar o projeto:<br>
-#cd rechacuca<br>
+#cd rachacuca<br>
 #php -S 0.0.0.0:8888<br>
 acesse http://0.0.0.0:8888<br>
 <br>
