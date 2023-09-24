@@ -53,7 +53,6 @@
             'Vila Maria / Guilherme' => 'https://www.cgesp.org/v3/estacao.jsp?POSTO=540',
             'Vila Mariana' => 'https://www.cgesp.org/v3/estacao.jsp?POSTO=495',
             'Vila Prudente' => 'https://www.cgesp.org/v3/estacao.jsp?POSTO=524',
-            // ... (outras estações)
         );
 
         // Array para armazenar os resultados
