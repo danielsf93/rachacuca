@@ -1,4 +1,5 @@
 <?php
+//rachacuca/rachacuca.php
         // Função para obter a temperatura de uma estação
         function getTemperature($url) {
             $ch = curl_init();

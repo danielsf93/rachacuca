@@ -1,76 +1,70 @@
-<html> 
-    <!rachacuca/rachacuca.html>
-    <head> 
-        <title>Rachacuca</title> 
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f0f0f0;
-                margin: 0;
-                padding: 0;
-            }
-    
-            h1 {
-                background-color: #ff1e00;
-                color: white;
-                padding: 20px;
-                text-align: left;
-            }
-    
-            ul {
-                list-style-type: none;
-                padding: 0;
-            }
-    
-            li {
-                background-color: rgb(255, 255, 255);
-                margin: 5px;
-                padding: 10px;
-                border-radius: 5px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            }
-        </style>
-    </head> 
-    <body> 
-        <h1>RACHACUCA</h1> 
-       
-        <div id="dateTime"></div>
-<script>
-    function updateDateTime() {
-        var dateTimeElement = document.getElementById("dateTime");
-        var currentDate = new Date();
-        var options = {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: 'numeric',
-            minute: 'numeric',
-            second: 'numeric',
-            timeZoneName: 'short'
-        };
-        
-        var formattedDate = currentDate.toLocaleDateString('pt-BR', options);
-        // Capitalize the first letter of the day of the week
-        formattedDate = formattedDate.replace(/^\w/, (c) => c.toUpperCase());
-        
-        // Use <strong> element to make the text bold
-        dateTimeElement.innerHTML = '<strong>' + formattedDate + '</strong>';
-    }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rachacuca</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
 
-    setInterval(updateDateTime, 1000);
-    updateDateTime();
-</script>
+        h1 {
+            background-color: #ff1e00;
+            color: white;
+            padding: 20px;
+            text-align: left;
+            cursor: pointer; /* Adicionando cursor pointer para indicar que é clicável */
+        }
 
-<style>
-    strong {
-        font-weight: bold;
-    }
-</style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
+        li {
+            background-color: rgb(255, 255, 255);
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1 onclick="reloadPage()">RACHACUCA</h1>
 
-              
-     <?php include('rachacuca.php') ?>
-        
-    </body> 
+    <div id="dateTime"></div>
+    <script>
+        function updateDateTime() {
+            var dateTimeElement = document.getElementById("dateTime");
+            var currentDate = new Date();
+            var options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                timeZoneName: 'short'
+            };
+
+            var formattedDate = currentDate.toLocaleDateString('pt-BR', options);
+            formattedDate = formattedDate.replace(/^\w/, (c) => c.toUpperCase());
+
+            dateTimeElement.innerHTML = '<strong>' + formattedDate + '</strong>';
+        }
+
+        function reloadPage() {
+            location.reload(); // Recarrega a página
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
+
+    <?php include('rachacuca.php') ?>
+</body>
 </html>
